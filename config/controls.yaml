@@ -1,0 +1,50 @@
+minecraft_controls:
+  # Movement Controls
+  move_forward:
+    key: 'w'
+    type: 'hold'
+  
+  move_backward:
+    key: 's'
+    type: 'hold'
+    
+  move_left:
+    key: 'a'
+    type: 'hold'
+    
+  move_right:
+    key: 'd'
+    type: 'hold'
+    
+  jump:
+    key: 'space'
+    type: 'tap'
+    
+  sneak:
+    key: 'shift'
+    type: 'hold'
+    
+  sprint:
+    key: 'ctrl'
+    type: 'toggle'
+  
+  # Action Controls  
+  attack:
+    key: 'left_click'
+    type: 'tap'
+    
+  use_item:
+    key: 'right_click'
+    type: 'tap'
+    
+  inventory:
+    key: 'e'
+    type: 'tap'
+    
+  drop_item:
+    key: 'q'
+    type: 'tap'
+    
+  # Special Actions
+  stop_all:
+    action: 'release_all'

@@ -1,0 +1,234 @@
+# Minecraft Controls Configuration
+
+minecraft_controls:
+  # Movement Controls
+  move_forward:
+    key: "w"
+    type: "hold"
+    description: "Move forward"
+    category: "movement"
+
+  move_backward:
+    key: "s"
+    type: "hold"
+    description: "Move backward"
+    category: "movement"
+
+  move_left:
+    key: "a"
+    type: "hold"
+    description: "Strafe left"
+    category: "movement"
+
+  move_right:
+    key: "d"
+    type: "hold"
+    description: "Strafe right"
+    category: "movement"
+
+  # Action Controls
+  jump:
+    key: "space"
+    type: "tap"
+    description: "Jump"
+    category: "action"
+
+  crouch:
+    key: "shift"
+    type: "hold"
+    description: "Crouch/Sneak"
+    category: "action"
+
+  sprint:
+    key: "ctrl"
+    type: "hold"
+    description: "Sprint"
+    category: "action"
+
+  # Interaction Controls
+  use_item:
+    key: "right_click"
+    type: "tap"
+    description: "Use item/Place block/Right click"
+    category: "interaction"
+
+  attack:
+    key: "left_click"
+    type: "tap"
+    description: "Attack/Break block/Left click"
+    category: "interaction"
+
+  # Interface Controls
+  inventory:
+    key: "e"
+    type: "tap"
+    description: "Open inventory"
+    category: "interface"
+
+  chat:
+    key: "t"
+    type: "tap"
+    description: "Open chat"
+    category: "interface"
+
+  drop_item:
+    key: "q"
+    type: "tap"
+    description: "Drop item"
+    category: "interface"
+
+  # Camera Controls (Mouse Movement)
+  turn_left:
+    action: "mouse_move"
+    direction: "left"
+    amount: 50
+    type: "instant"
+    description: "Turn camera left"
+    category: "camera"
+
+  turn_right:
+    action: "mouse_move"
+    direction: "right"
+    amount: 50
+    type: "instant"
+    description: "Turn camera right"
+    category: "camera"
+
+  look_up:
+    action: "mouse_move"
+    direction: "up"
+    amount: 30
+    type: "instant"
+    description: "Look up"
+    category: "camera"
+
+  look_down:
+    action: "mouse_move"
+    direction: "down"
+    amount: 30
+    type: "instant"
+    description: "Look down"
+    category: "camera"
+
+  # Special Controls
+  stop_all:
+    action: "release_all"
+    description: "Release all keys"
+    category: "special"
+
+  # Additional Minecraft Controls
+  pause:
+    key: "esc"
+    type: "tap"
+    description: "Pause game/Open menu"
+    category: "interface"
+
+  hotbar_1:
+    key: "1"
+    type: "tap"
+    description: "Select hotbar slot 1"
+    category: "hotbar"
+
+  hotbar_2:
+    key: "2"
+    type: "tap"
+    description: "Select hotbar slot 2"
+    category: "hotbar"
+
+  hotbar_3:
+    key: "3"
+    type: "tap"
+    description: "Select hotbar slot 3"
+    category: "hotbar"
+
+  hotbar_4:
+    key: "4"
+    type: "tap"
+    description: "Select hotbar slot 4"
+    category: "hotbar"
+
+  hotbar_5:
+    key: "5"
+    type: "tap"
+    description: "Select hotbar slot 5"
+    category: "hotbar"
+
+  # Creative Mode Controls
+  fly_up:
+    key: "space"
+    type: "hold"
+    description: "Fly up (Creative mode)"
+    category: "creative"
+
+  fly_down:
+    key: "shift"
+    type: "hold"
+    description: "Fly down (Creative mode)"
+    category: "creative"
+
+# Control Settings
+control_settings:
+  # Mouse sensitivity
+  mouse_sensitivity: 1.0
+  
+  # Movement settings
+  movement:
+    acceleration: true
+    smoothing: false
+    
+  # Mouse settings
+  mouse:
+    sensitivity: 1.0
+    acceleration: false
+    smoothing: true
+    invert_y: false
+    
+  # Key repeat settings
+  key_repeat:
+    enabled: true
+    delay: 0.5      # Initial delay before repeat
+    rate: 0.05      # Repeat rate in seconds
+    
+  # Safety settings
+  safety:
+    auto_release_timeout: 2.0  # Auto-release keys after 2 seconds
+    emergency_stop_gesture: "open_palm"
+    max_simultaneous_keys: 5
+    
+  # Game mode specific settings
+  game_modes:
+    survival:
+      enable_sprinting: true
+      enable_jumping: true
+      enable_crouching: true
+      
+    creative:
+      enable_flying: true
+      enable_instant_break: true
+      
+    spectator:
+      enable_flying: true
+      enable_noclip: true
+
+# Key Mappings (Alternative layouts)
+alternative_layouts:
+  wasd_layout:
+    description: "Standard WASD layout"
+    move_forward: "w"
+    move_backward: "s"
+    move_left: "a"
+    move_right: "d"
+    
+  arrow_layout:
+    description: "Arrow keys layout"
+    move_forward: "up"
+    move_backward: "down"
+    move_left: "left"
+    move_right: "right"
+    
+  custom_layout:
+    description: "Custom layout example"
+    move_forward: "i"
+    move_backward: "k"
+    move_left: "j"
+    move_right: "l"

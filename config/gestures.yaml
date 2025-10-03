@@ -1,0 +1,230 @@
+# Gesture Definitions Configuration - Simplified for OpenCV Detection
+
+gestures:
+  # Basic Movement Gestures
+  fist:
+    name: "Fist"
+    action: "attack" 
+    description: "Closed fist for attacking/mining"
+    conditions:
+      fingers_count: 0
+      is_closed_fist: true
+      min_confidence: 0.5
+    sensitivity: 0.8
+    hold_time: 0.1
+
+  open_hand:
+    name: "Open Hand"
+    action: "move_forward"
+    description: "Open hand to move forward"
+    conditions:
+      fingers_count: 5
+      is_open_palm: true
+      min_confidence: 0.5
+    sensitivity: 0.8
+    hold_time: 0.1
+
+  point:
+    name: "Point"
+    action: "use_item"
+    description: "Point gesture for using items"
+    conditions:
+      fingers_count: 1
+      min_confidence: 0.5
+    sensitivity: 0.7
+    hold_time: 0.1
+
+  peace:
+    name: "Peace Sign"
+    action: "jump"
+    description: "Two fingers up for jumping"
+    conditions:
+      fingers_count: 2
+      min_confidence: 0.5
+    sensitivity: 0.7
+    hold_time: 0.1
+
+  three_fingers:
+    name: "Three Fingers"
+    action: "inventory"
+    description: "Three fingers for inventory"
+    conditions:
+      fingers_count: 3
+      min_confidence: 0.5
+    sensitivity: 0.7
+    hold_time: 0.1
+
+  four_fingers:
+    name: "Four Fingers"
+    action: "sneak"
+    description: "Four fingers for sneaking"
+    conditions:
+      fingers_count: 4
+      min_confidence: 0.5
+    sensitivity: 0.7
+    hold_time: 0.1
+
+  point_up:
+    name: "Point Up"
+    action: "look_up"
+    description: "Point index finger up to look up"
+    conditions:
+      fingers_up: [0, 1, 0, 0, 0]
+      min_confidence: 0.7
+      orientation_range: [45, 135]  # degrees
+    sensitivity: 0.6
+    hold_time: 0.05
+
+  point_down:
+    name: "Point Down"
+    action: "look_down"
+    description: "Point index finger down to look down"
+    conditions:
+      fingers_up: [0, 1, 0, 0, 0]
+      min_confidence: 0.7
+      orientation_range: [225, 315]  # degrees
+    sensitivity: 0.6
+    hold_time: 0.05
+
+  # Action Gestures
+  thumbs_up:
+    name: "Thumbs Up"
+    action: "jump"
+    description: "Thumbs up to jump"
+    conditions:
+      fingers_up: [1, 0, 0, 0, 0]
+      min_confidence: 0.8
+    sensitivity: 0.8
+    hold_time: 0.0
+
+  peace_sign:
+    name: "Peace Sign"
+    action: "crouch"
+    description: "Peace sign (index and middle fingers) to crouch"
+    conditions:
+      fingers_up: [0, 1, 1, 0, 0]
+      min_confidence: 0.8
+    sensitivity: 0.8
+    hold_time: 0.1
+
+  l_shape:
+    name: "L Shape"
+    action: "inventory"
+    description: "L shape (thumb and index) to open inventory"
+    conditions:
+      fingers_up: [1, 1, 0, 0, 0]
+      min_confidence: 0.8
+    sensitivity: 0.8
+    hold_time: 0.0
+
+  three_fingers:
+    name: "Three Fingers"
+    action: "sprint"
+    description: "Three fingers (index, middle, ring) to sprint"
+    conditions:
+      fingers_up: [0, 1, 1, 1, 0]
+      min_confidence: 0.8
+    sensitivity: 0.7
+    hold_time: 0.1
+
+  # Interaction Gestures
+  pinch:
+    name: "Pinch"
+    action: "use_item"
+    description: "Pinch thumb and index finger to use item"
+    conditions:
+      custom_detector: "detect_pinch"
+      min_confidence: 0.7
+      pinch_threshold: 0.05
+    sensitivity: 0.8
+    hold_time: 0.0
+
+  grab:
+    name: "Grab"
+    action: "attack"
+    description: "Grab gesture (curved fingers) to attack"
+    conditions:
+      fingers_up: [0, 0, 0, 0, 0]
+      min_confidence: 0.6
+      openness_threshold: 0.4
+      openness_operator: "greater"
+    sensitivity: 0.7
+    hold_time: 0.0
+
+  # Advanced Gestures
+  rock_on:
+    name: "Rock On"
+    action: "drop_item"
+    description: "Rock on sign (index and pinky) to drop item"
+    conditions:
+      fingers_up: [0, 1, 0, 0, 1]
+      min_confidence: 0.8
+    sensitivity: 0.8
+    hold_time: 0.0
+
+  call_me:
+    name: "Call Me"
+    action: "chat"
+    description: "Call me gesture (thumb and pinky) to open chat"
+    conditions:
+      fingers_up: [1, 0, 0, 0, 1]
+      min_confidence: 0.8
+    sensitivity: 0.8
+    hold_time: 0.0
+
+  # Two-handed Gestures (require specific hand)
+  left_fist:
+    name: "Left Fist"
+    action: "move_left"
+    description: "Left hand closed fist to strafe left"
+    conditions:
+      fingers_up: [0, 0, 0, 0, 0]
+      min_confidence: 0.7
+      hand_label: "Left"
+    sensitivity: 0.8
+    hold_time: 0.1
+
+  right_fist:
+    name: "Right Fist"
+    action: "move_right"
+    description: "Right hand closed fist to strafe right"
+    conditions:
+      fingers_up: [0, 0, 0, 0, 0]
+      min_confidence: 0.7
+      hand_label: "Right"
+    sensitivity: 0.8
+    hold_time: 0.1
+
+# Gesture Settings
+gesture_settings:
+  # Global sensitivity multiplier
+  global_sensitivity: 1.0
+  
+  # Temporal filtering settings
+  temporal_filtering:
+    enabled: true
+    window_size: 5
+    min_occurrences: 3
+  
+  # Cooldown settings
+  cooldown:
+    same_gesture: 0.1      # Seconds between same gesture
+    different_gesture: 0.05 # Seconds between different gestures
+    global_cooldown: 0.02   # Minimum time between any gestures
+  
+  # Confidence thresholds
+  confidence_thresholds:
+    minimum: 0.5           # Absolute minimum confidence
+    good: 0.7             # Good detection threshold
+    excellent: 0.9        # Excellent detection threshold
+  
+  # Hand preference
+  hand_preference:
+    primary: "right"       # Primary hand for single-hand gestures
+    require_both: false    # Require both hands for two-handed gestures
+    
+  # Debug settings
+  debug:
+    log_all_detections: false
+    log_confidence_scores: false
+    save_gesture_data: false

@@ -1,0 +1,61 @@
+# Application Settings Configuration
+
+# Camera Settings
+camera:
+  id: 0                    # Camera device ID (0, 1, 2, etc.) - ignored if ip_url is set
+  ip_url: null             # IP camera URL (e.g., "http://192.168.1.100:8080/video")
+  resolution: [640, 480]   # Camera resolution [width, height]
+  fps: 30                  # Target FPS
+  auto_adjust: true        # Auto-adjust camera settings for optimal detection
+
+# Hand Detection Settings
+hand_detection:
+  confidence: 0.7          # Minimum detection confidence (0.0 - 1.0)
+  max_hands: 2             # Maximum number of hands to detect
+  tracking_confidence: 0.5 # Minimum tracking confidence
+
+# Gesture Recognition Settings
+gestures:
+  config_path: "config/gestures.yaml"
+  temporal_filtering: true # Enable temporal filtering to reduce noise
+  cooldown: 0.1           # Cooldown between same gesture activations (seconds)
+  history_length: 5       # Number of frames to use for temporal filtering
+
+# Minecraft Controls
+minecraft:
+  config_path: "config/minecraft_controls.yaml"
+
+# YOLO Detection Settings (Enhanced Context Detection)
+yolo:
+  enabled: true           # Enable YOLO for enhanced detection context
+  model_path: "models/yolov8n.pt"
+  confidence: 0.5         # Detection confidence threshold
+  iou_threshold: 0.45     # IoU threshold for NMS
+  max_detections: 100     # Maximum detections per frame
+
+# Debug and Visualization Settings
+debug:
+  enabled: false          # Enable debug visualization
+  show_landmarks: false   # Show hand landmarks
+  show_fps: true         # Show FPS counter
+  save_frames: false     # Save debug frames to disk
+  output_dir: "debug_output"
+
+# Performance Settings
+performance:
+  frame_skip: 1          # Process every nth frame (1 = process all frames)
+  max_fps: 30            # Maximum FPS limit
+  resize_factor: 1.0     # Resize input frames (1.0 = no resize, 0.5 = half size)
+  threading: true        # Use threading for camera capture
+
+# Logging Settings
+logging:
+  level: "INFO"          # Logging level (DEBUG, INFO, WARNING, ERROR)
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: null             # Log file path (null = console only)
+
+# System Settings
+system:
+  startup_delay: 2.0     # Delay before starting detection (seconds)
+  auto_calibrate: false  # Auto-calibrate gestures on startup
+  safety_mode: true      # Enable safety features (auto-release keys)
