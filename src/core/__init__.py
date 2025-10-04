@@ -1,1 +1,0 @@
-"""Core module for Minecraft Hand Gesture Controller."""
