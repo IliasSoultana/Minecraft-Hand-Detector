@@ -856,7 +856,7 @@ This technical deep dive has explored the complete journey of building a real-ti
 
 This project demonstrates that computer vision and machine learning can be successfully applied to real-time gaming applications with careful engineering and systematic optimization. The multi-modal approach and comprehensive testing ensure the system works reliably across different environments and hardware configurations.
 
-The technical decisions made here—from Random Forest over deep learning to geometric features over raw pixels—illustrate how domain knowledge and engineering pragmatism can lead to better solutions than purely academic approaches.
+The technical decisions made here from Random Forest over deep learning to geometric features over raw pixels—illustrate how domain knowledge and engineering pragmatism can lead to better solutions than purely academic approaches.
 
 **Final Thoughts**: Building real-time systems requires balancing multiple competing demands: accuracy vs. speed, complexity vs. maintainability, features vs. reliability. This project successfully navigates these tradeoffs to deliver a practical, working solution that meets the demanding requirements of gaming applications.
 
